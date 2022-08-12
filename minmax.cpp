@@ -70,6 +70,17 @@ class Solution
     	return minmax.min+minmax.max;
     }
 
+	
+	/*
+	
+	
+			If n is odd:    3*(n-1)/2  
+		       If n is even:   1 Initial comparison for initializing min and max, 
+					   and 3(n-2)/2 comparisons for rest of the elements  
+				      =  1 + 3*(n-2)/2 = 3n/2 -2
+		      
+		      
+		      */
 };
 
 //{ Driver Code Starts.
