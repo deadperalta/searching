@@ -1,0 +1,43 @@
+int produced(vector<int>&arr,int mid,int m)
+{
+  int sum=0;
+  
+  for(int i:arr)
+  {
+    sum+=(mid/i);
+  }
+  
+  if(sum >= m)
+  {
+    return true;
+  }
+  return false;
+}
+int minTime(vector<int>&arr,int m)
+{
+  int low=1;
+  int maxVal=0;
+  
+  for(int i:arr)
+  {
+    maxVal=max(maxVal,i);
+  }
+  
+  high=maxVal*m;
+  int ans;
+  
+  while(low <= high)
+  {
+    int mid=low+((high-low)>>1);
+    
+    if(produced(arr,mid,m))
+    {
+      ans=mid;
+      high=mid-1;
+    }
+    else
+    {
+      low=mid+1;
+    }
+  }
+  return ans;
